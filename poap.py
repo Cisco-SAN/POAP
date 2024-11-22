@@ -18,7 +18,6 @@
 # done by this script itself.
 
 import os
-import time
 import re
 import sys
 import shutil
@@ -26,6 +25,7 @@ import signal
 import string
 import traceback
 from cli import *
+from time import gmtime, strftime
 
 # **** Here are all variables that parametrize this script **** 
 # *************************************************************
@@ -96,8 +96,8 @@ cdp_interface=None
 if 'POAP_INTF' in os.environ:
     cdp_interface=os.environ['POAP_INTF']
 
-# will append date/timespace into the name later
-log_filename = "/bootflash/poap.log"
+#Appending date and time to the logfile, so that logs are not overwritten. 
+log_filename = "/bootflash/poap_%s.log" % (strftime("%Y%m%d%H%M%S", gmtime()))
 t=time.localtime()
 now="%d_%d_%d" % (t.tm_hour, t.tm_min, t.tm_sec)
 #now=None
@@ -267,12 +267,6 @@ cli("no terminal color persist")
 cli("terminal dont-ask")
 cli("terminal password %s" % password)
 
-# utility functions
-# def run_cli (cmd):
-#    poap_log("CLI : %s" % cmd)
-#    r=cli(cmd)
-
-#    return r
 
 def rm_rf (filename): 
     try: cli("delete %s" % filename)
