@@ -16,13 +16,13 @@ The script (poap.py) has to be modified based on the requirements before moving 
 The options dictionary stores all the paramters which can be tweaked to get the required results with the script.
 (Only the options dictionary should be changed, rest of the script remains static). 
 The available paramters in the options dictionary are:- 
-"protocol"                  :-   The transfer protocol that is to be used to copy the files 
-"username"                  :-   username that is to be used if the file server requires login
-"ftp_username"              :-   username to be used for ftp
-"password"                  :-   password that is to be if the file server required login
-"hostname"                  :-   The hostname of the file server from which we want to copy files.
-"target_system_image"       :-   The target system image that we want the switch to upgrade to.
-"target_kickstart_image"    :-   The target kickstart image that we want the switch to upgrade to.
+- "protocol"                  :-   The transfer protocol that is to be used to copy the files 
+- "username"                  :-   username that is to be used if the file server requires login
+- "ftp_username"              :-   username to be used for ftp
+- "password"                  :-   password that is to be if the file server required login
+- "hostname"                  :-   The hostname of the file server from which we want to copy files.
+- "target_system_image"       :-   The target system image that we want the switch to upgrade to.
+- "target_kickstart_image"    :-   The target kickstart image that we want the switch to upgrade to.
 
 The script should work as expected once the parameters/options are configured. Please reach out to CISCO TAC if you have hit 
 any issues. If the TAC team finds a bug, the fix will be integrated into the script. 
